@@ -8,8 +8,6 @@ import java.util.List;
 import by.tc.task01.dao.ApplianceDAO;
 import by.tc.task01.dao.exception.DAOException;
 import by.tc.task01.entity.Appliance;
-import by.tc.task01.entity.criteria.ApplianceCreator;
-import by.tc.task01.entity.criteria.ApplianceReader;
 import by.tc.task01.entity.criteria.Criteria;
 
 public class ApplianceDAOImpl implements ApplianceDAO {
