@@ -24,7 +24,7 @@ public class ApplianceReader {
 		
 		List<String[]> dataList = new ArrayList<>();
 		
-		Path fileName = Paths.get("src/main/resources/appliances_db.txt");
+		Path fileName = Paths.get("resources/appliances_db.txt");
 		try(BufferedReader reader = new BufferedReader(new FileReader(fileName.toFile()))){
 		
 			while (reader.ready()) {
