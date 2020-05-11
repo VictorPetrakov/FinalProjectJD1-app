@@ -4,9 +4,10 @@ import java.util.List;
 
 import by.tc.task01.entity.Appliance;
 import by.tc.task01.entity.criteria.Criteria;
+import by.tc.task01.service.exception.ServiceException;
 
 public interface ApplianceService {	
 	
-	List<Appliance> find(Criteria criteria);
+	List<Appliance> find(Criteria criteria) throws ServiceException;
 	
 }

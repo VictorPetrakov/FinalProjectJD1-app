@@ -9,6 +9,7 @@ import by.tc.task01.entity.Appliance;
 import by.tc.task01.entity.criteria.Criteria;
 import by.tc.task01.service.ApplianceService;
 import by.tc.task01.service.ServiceFactory;
+import by.tc.task01.service.exception.ServiceException;
 
 public class Main {
 
@@ -22,9 +23,14 @@ public class Main {
 		
 		  Criteria criteriaOven = new Criteria(Oven.class.getSimpleName());//"Oven"
 		  criteriaOven.add(Oven.CAPACITY.toString(), 33);
-		  
-		  applianceList = service.find(criteriaOven);
-		  
+		  try {
+			  
+			  applianceList = service.find(criteriaOven);
+			  
+		  } catch (ServiceException e){
+			  
+			  System.out.println(e.getMessage());
+		  }
 		  PrintApplianceInfo.print(applianceList);
 		  
 		  System.out.println();
@@ -34,8 +40,14 @@ public class Main {
 		  criteriaOven = new Criteria(Oven.class.getSimpleName());
 		  criteriaOven.add(Oven.DEPTH.toString(), 60);
 		  criteriaOven.add(Oven.HEIGHT.toString(), 40);
-		  
-		  applianceList = service.find(criteriaOven);
+		  try {
+			  
+			  applianceList = service.find(criteriaOven);
+			  
+		  }catch (ServiceException e) {
+			  
+		  	System.out.println(e.getMessage());
+		  }
 		  
 		  PrintApplianceInfo.print(applianceList);
 		  
@@ -48,9 +60,14 @@ public class Main {
 		criteriaTabletPC.add(TabletPC.COLOR.toString(), "blue");
 		criteriaTabletPC.add(TabletPC.DISPLAY_INCHES.toString(), 14);
 		criteriaTabletPC.add(TabletPC.MEMORY_ROM.toString(), 8000);
-		
-		applianceList = service.find(criteriaTabletPC);
-
+		try {
+			
+			applianceList = service.find(criteriaTabletPC);
+			
+		}catch (ServiceException e){
+			
+			System.out.println(e.getMessage());
+		}
 		PrintApplianceInfo.print(applianceList);
 		
 	}
